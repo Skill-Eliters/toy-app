@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.example.toyproject.ui.fragments.homepage"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_homepage_to_view_toy"
+            app:destination="@id/view_toy" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart"
+        android:name="com.example.toyproject.ui.fragments.cart"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cart_to_view_toy"
+            app:destination="@id/view_toy" />
+    </fragment>
+    <fragment
+        android:id="@+id/user_details"
+        android:name="com.example.toyproject.ui.fragments.user_details"
+        android:label="fragment_user_details"
+        tools:layout="@layout/fragment_user_details" />
+    <fragment
+        android:id="@+id/toy_details"
+        android:name="com.example.toyproject.ui.fragments.toy_details"
+        android:label="fragment_toy_details"
+        tools:layout="@layout/fragment_toy_details" >
+        <action
+            android:id="@+id/action_toy_details_to_view_toy"
+            app:destination="@id/view_toy" />
+    </fragment>
+    <fragment
+        android:id="@+id/view_toy"
+        android:name="com.example.toyproject.ui.fragments.view_toy"
+        android:label="fragment_view_toy"
+        tools:layout="@layout/fragment_view_toy" >
+        <action
+            android:id="@+id/action_view_toy_to_toy_details"
+            app:destination="@id/toy_details" />
+        <action
+            android:id="@+id/action_view_toy_to_homepage"
+            app:destination="@id/homepage" />
+        <action
+            android:id="@+id/action_view_toy_to_cart"
+            app:destination="@id/cart" />
+    </fragment>
+</navigation>
